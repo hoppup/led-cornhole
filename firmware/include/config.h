@@ -30,15 +30,15 @@
 
 // --- Game Settings ---
 #define WINNING_SCORE       21
-#define RESET_HOLD_MS       3000    // Hold reset 3s to reset game
 #define UNDO_HOLD_MS        1000    // Hold both buttons 1s to undo last score
+#define RESET_HOLD_MS       3000    // Hold both buttons 3s to reset game
 
 // --- Pin Definitions (ESP32-S3 DevKitC) ---
 #define PIN_LED_DATA        18      // WS2812B data line (via 330Ω resistor)
 #define PIN_BTN_RED         4       // Red team +1 button (INPUT_PULLUP, active LOW)
 #define PIN_BTN_BLUE        5       // Blue team +1 button (INPUT_PULLUP, active LOW)
-#define PIN_BTN_RESET       6       // Reset button (INPUT_PULLUP, active LOW)
 #define PIN_BUZZER          7       // Passive buzzer
+// No dedicated reset button — hold both red+blue for 3s to reset
 
 // --- LED Layout ---
 // Scoreboard: 4 digits × 7 segments × 4 LEDs/segment = 112, plus 4 separator dots = 116

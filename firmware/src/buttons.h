@@ -8,8 +8,8 @@ enum ButtonEvent {
     BTN_NONE,
     BTN_RED_PRESS,
     BTN_BLUE_PRESS,
-    BTN_RESET_HOLD,
-    BTN_UNDO       // Both red+blue held together
+    BTN_UNDO,          // Both held 1 second
+    BTN_RESET_HOLD     // Both held 3 seconds
 };
 
 void buttons_init();

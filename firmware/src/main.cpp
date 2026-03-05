@@ -74,10 +74,10 @@ void setup() {
     
     Serial.println();
     Serial.println("[MAIN] Ready to play! Waiting for button presses...");
-    Serial.println("[MAIN] Red button  → +1 Red");
-    Serial.println("[MAIN] Blue button → +1 Blue");
-    Serial.println("[MAIN] Both held   → Undo last");
-    Serial.println("[MAIN] Reset held  → New game");
+    Serial.println("[MAIN] Red button    → +1 Red");
+    Serial.println("[MAIN] Blue button   → +1 Blue");
+    Serial.println("[MAIN] Both held 1s  → Undo last score");
+    Serial.println("[MAIN] Both held 3s  → Reset game");
     Serial.println();
 }
 
