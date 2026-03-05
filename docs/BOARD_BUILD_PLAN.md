@@ -366,6 +366,11 @@ Combined with electronics (~$130-175), **total per set: ~$350-395** for premium 
 
 ## 9. Reference Links
 
+### ⭐ Primary Build Reference
+- **"Pro Quality Cornhole Boards With BONUS FEATURES"** — This is the build style we're following. Pro quality construction with bag storage, drink holder, and lighting built in.
+  - <https://www.youtube.com/watch?v=XlxuakfQ7uk>
+
+### Additional References
 - **Kreg Regulation Cornhole Plan:** <https://learn.kregtool.com/plans/cornhole-official-regulation-size/>
 - **Cornhole Pro (how they build):** <https://cornholepromn.com/how-we-build-q-a/>
 - **SlickWoodys Finishing Guide:** <https://www.slickwoodys.com/blogs/cornhole-boards/how-to-finish-a-cornhole-board>
