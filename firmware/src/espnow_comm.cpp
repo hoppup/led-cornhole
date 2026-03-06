@@ -16,7 +16,13 @@ static void onDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
     }
 }
 
+// ESP32-S3 uses newer callback signature (esp_now_recv_info_t)
+// Standard ESP32 uses old signature (const uint8_t *mac_addr)
+#ifdef CONFIG_IDF_TARGET_ESP32S3
 static void onDataRecv(const esp_now_recv_info_t *info, const uint8_t *data, int len) {
+#else
+static void onDataRecv(const uint8_t *mac_addr, const uint8_t *data, int len) {
+#endif
     if (len == sizeof(ScorePacket)) {
         memcpy((void*)&_rxPacket, data, sizeof(ScorePacket));
         _received = true;

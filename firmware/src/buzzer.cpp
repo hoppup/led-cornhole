@@ -14,7 +14,13 @@ static void playTone(uint16_t freq, uint16_t duration) {
 }
 
 void buzzer_init() {
-    ledcAttach(PIN_BUZZER, 2000, BUZZER_RESOLUTION);
+    // ESP32-S3 uses newer ledcAttach(), standard ESP32 uses ledcSetup() + ledcAttachPin()
+    #ifdef CONFIG_IDF_TARGET_ESP32S3
+        ledcAttach(PIN_BUZZER, 2000, BUZZER_RESOLUTION);
+    #else
+        ledcSetup(BUZZER_CHANNEL, 2000, BUZZER_RESOLUTION);
+        ledcAttachPin(PIN_BUZZER, BUZZER_CHANNEL);
+    #endif
     ledcWriteTone(BUZZER_CHANNEL, 0); // Start silent
     Serial.println("[BUZZER] Initialized");
 }
