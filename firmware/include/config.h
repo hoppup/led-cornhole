@@ -21,11 +21,13 @@
 // Find each board's MAC with: Serial.println(WiFi.macAddress());
 // Then set the OTHER board's MAC here.
 #if BOARD_ID == BOARD_A
+  // Board A (EC:64:C9:5E:01:BC) → talks to Board B
   static const char* BLE_DEVICE_NAME = "Cornhole-A";
-  static uint8_t PEER_MAC[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // ← Board B's MAC
+  static uint8_t PEER_MAC[] = {0xEC, 0x64, 0xC9, 0x5D, 0xAB, 0xC4}; // Board B's MAC
 #else
+  // Board B (EC:64:C9:5D:AB:C4) → talks to Board A
   static const char* BLE_DEVICE_NAME = "Cornhole-B";
-  static uint8_t PEER_MAC[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // ← Board A's MAC
+  static uint8_t PEER_MAC[] = {0xEC, 0x64, 0xC9, 0x5E, 0x01, 0xBC}; // Board A's MAC
 #endif
 
 // --- Game Settings ---
