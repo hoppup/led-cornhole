@@ -34,20 +34,12 @@
 #define RESET_HOLD_MS       3000    // Hold both buttons 3s to reset game
 
 // --- Pin Definitions ---
-// Detect board type and assign pins accordingly
-#ifdef CONFIG_IDF_TARGET_ESP32S3
-  // ESP32-S3 DevKitC
-  #define PIN_LED_DATA      18      // WS2812B data line (via 330Ω resistor)
-  #define PIN_BTN_RED       4       // Red team +1 button (INPUT_PULLUP, active LOW)
-  #define PIN_BTN_BLUE      5       // Blue team +1 button (INPUT_PULLUP, active LOW)
-  #define PIN_BUZZER        7       // Passive buzzer
-#else
-  // Standard ESP32 (ESP32-D / DevKitC-32 / 38-pin)
-  #define PIN_LED_DATA      18      // WS2812B data line (via 330Ω resistor)
-  #define PIN_BTN_RED       4       // Red team +1 button (INPUT_PULLUP, active LOW)
-  #define PIN_BTN_BLUE      5       // Blue team +1 button (INPUT_PULLUP, active LOW)
-  #define PIN_BUZZER        15      // Passive buzzer
-#endif
+// Standard ESP32 (ESP32-D / DevKitC-32 / 38-pin)
+// If using ESP32-S3 later, just change PIN_BUZZER to 7
+#define PIN_LED_DATA        18      // WS2812B data line (via 330Ω resistor)
+#define PIN_BTN_RED         4       // Red team +1 button (INPUT_PULLUP, active LOW)
+#define PIN_BTN_BLUE        5       // Blue team +1 button (INPUT_PULLUP, active LOW)
+#define PIN_BUZZER          15      // Passive buzzer (use GPIO 7 on ESP32-S3)
 // No dedicated reset button — hold both red+blue for 3s to reset
 
 // --- LED Layout ---
