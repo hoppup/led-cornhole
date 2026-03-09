@@ -88,9 +88,12 @@ void display_setDigit(CRGB* leds, uint8_t position, uint8_t value, CRGB color) {
 }
 
 void display_setSeparator(CRGB* leds, CRGB color) {
+    // Separator disabled for testing
+    #if LEDS_SEPARATOR > 0
     for (int i = 0; i < LEDS_SEPARATOR; i++) {
         leds[IDX_SEPARATOR + i] = color;
     }
+    #endif
 }
 
 void display_clearScoreboard(CRGB* leds) {

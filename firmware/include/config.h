@@ -45,29 +45,27 @@
 // No dedicated reset button — hold both red+blue for 3s to reset
 
 // --- LED Layout ---
-// Scoreboard: 4 digits × 7 segments × 4 LEDs/segment = 112, plus 4 separator dots = 116
+// Scoreboard only: 4 digits × 7 segments × 4 LEDs/segment = 112
+// Separator dots and hole ring disabled for testing
 #define LEDS_PER_SEGMENT    4
 #define SEGMENTS_PER_DIGIT  7
 #define LEDS_PER_DIGIT      (SEGMENTS_PER_DIGIT * LEDS_PER_SEGMENT)  // 28
 #define NUM_DIGITS          4
-#define LEDS_SEPARATOR      4       // 2 dots × 2 LEDs each
-#define LEDS_SCOREBOARD     (NUM_DIGITS * LEDS_PER_DIGIT + LEDS_SEPARATOR)  // 116
+#define LEDS_SEPARATOR      0       // Disabled for testing
+#define LEDS_SCOREBOARD     (NUM_DIGITS * LEDS_PER_DIGIT)            // 112
 
-#define LEDS_HOLE_RING      24
-#define LEDS_EDGE           0       // Set when edge LEDs are installed
+#define LEDS_HOLE_RING      0       // Disabled for testing
+#define LEDS_EDGE           0
 
-#define NUM_LEDS_TOTAL      (LEDS_SCOREBOARD + LEDS_HOLE_RING + LEDS_EDGE)
+#define NUM_LEDS_TOTAL      LEDS_SCOREBOARD                          // 112
 
 // --- LED Zone Start Indices ---
-// Order on the strip: [Digit0][Digit1][Separator][Digit2][Digit3][HoleRing][Edge]
+// Order on the strip: [Digit0][Digit1][Digit2][Digit3]
 //   Digit 0 = Red tens, Digit 1 = Red ones, Digit 2 = Blue tens, Digit 3 = Blue ones
-#define IDX_DIGIT_0         0
+#define IDX_DIGIT_0         0                                        // 0
 #define IDX_DIGIT_1         (IDX_DIGIT_0 + LEDS_PER_DIGIT)          // 28
-#define IDX_SEPARATOR       (IDX_DIGIT_1 + LEDS_PER_DIGIT)          // 56
-#define IDX_DIGIT_2         (IDX_SEPARATOR + LEDS_SEPARATOR)         // 60
-#define IDX_DIGIT_3         (IDX_DIGIT_2 + LEDS_PER_DIGIT)          // 88
-#define IDX_HOLE_RING       LEDS_SCOREBOARD                          // 116
-#define IDX_EDGE            (IDX_HOLE_RING + LEDS_HOLE_RING)        // 140
+#define IDX_DIGIT_2         (IDX_DIGIT_1 + LEDS_PER_DIGIT)          // 56
+#define IDX_DIGIT_3         (IDX_DIGIT_2 + LEDS_PER_DIGIT)          // 84
 
 // --- Brightness ---
 #define BRIGHTNESS_DEFAULT  150     // ~60% — good for battery life + visibility
